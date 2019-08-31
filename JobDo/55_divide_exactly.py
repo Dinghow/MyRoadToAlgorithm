@@ -1,13 +1,13 @@
-str = input();
+str = input()
 str1, str2 = str.split(' ')
 n = int(str1)
 a = int(str2)
 
 def factorial(n):
-    mul = 1;
+    mul = 1
     while(n > 0):
-        mul = mul*n;
-        n = n-1;
+        mul = mul*n
+        n = n-1
     return mul
 
 n_mul = factorial(n)
