@@ -1,21 +1,21 @@
 #include<iostream>
-#include<vector>
 #include<map>
-#include<algorithm>
 #include<string>
 
 using namespace std;
 
 int in_d[1000] = {0};
-bool mark[1000];
 map<string, int> num;
 
 int main(){
     string a, b;
-    int n, counter = 0;
+    int n, counter;
     int c, d;
     while(cin>>n){
-        vector<int> adj[1000];
+        if(!n) break;
+        fill(in_d,in_d+1000,0);
+        num.clear();
+        counter = 0;
         for(int i = 0; i < n; i++){
             cin>>a>>b;
             if(num.find(a) == num.end()){
@@ -28,8 +28,6 @@ int main(){
                 counter++;
             }
             d = num.find(b)->second;
-            adj[c].push_back(d);
-            mark[c] = false;
             in_d[d]++;
         }
         int zero = 0;
@@ -38,6 +36,5 @@ int main(){
         }
         cout<<(zero==1?"Yes":"No")<<endl;
     }
-
     return 0;
 }
